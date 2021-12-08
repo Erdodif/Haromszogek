@@ -4,17 +4,63 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="400" prefWidth="400" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.2"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haromszogek.HaromszogController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0"
+      prefWidth="764.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.haromszogek.HaromszogController">
     <children>
-        <Button fx:id="btnAdatokBetoltese" mnemonicParsing="false" prefHeight="38.0"
-                prefWidth="84.0" text="Adatok betöltése">
+        <Button fx:id="buttonAdatokBetoltese" mnemonicParsing="false" onAction="#onButtonAdatokBetolteseClick"
+                text="Adatok betöltése">
             <VBox.margin>
-                <Insets top="10" bottom="10" left="10" right="10"/>
+                <Insets bottom="20.0" left="20.0" top="20.0"/>
             </VBox.margin>
         </Button>
+        <TitledPane animated="false" collapsible="false" minHeight="-Infinity" minWidth="-Infinity" prefWidth="750.0"
+                    text="Hibák a kiválasztott állományban">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ListView fx:id="listViewHibak" layoutX="-2.0" prefHeight="180.0" prefWidth="800.0"/>
+                    </children>
+                </AnchorPane>
+            </content>
+        </TitledPane>
+        <HBox>
+            <children>
+                <TitledPane animated="false" collapsible="false" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                            prefWidth="298.0" text="Derékszögű háromszögek">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="listViewDerekszoguek" layoutY="-1.0" prefHeight="155.0"
+                                          prefWidth="298.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" collapsible="false" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                            prefWidth="440.0" text="Kiválasztott derékszögű háromszögek adatai">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="155.0" prefWidth="440.0">
+                                    <children>
+                                        <Label text="Terület: ">
+                                            <VBox.margin>
+                                                <Insets top="10" bottom="10" left="10" right="10"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <Label text="Kerület:">
+                                            <VBox.margin>
+                                                <Insets top="10" bottom="10" left="10" right="10"/>
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+            </children>
+        </HBox>
     </children>
 </VBox>

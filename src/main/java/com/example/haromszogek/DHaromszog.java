@@ -14,7 +14,9 @@ public class DHaromszog {
         this.setaOldal(Double.parseDouble(adatok[0]));
         this.setbOldal(Double.parseDouble(adatok[1]));
         this.setcOldal(Double.parseDouble(adatok[2]));
-
+        this.EllNovekvoSorrend();
+        this.EllMegszerkesztheto();
+        this.EllDerekszogu();
     }
 
     public void setaOldal(double aOldal) throws Exception {
